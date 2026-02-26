@@ -1,14 +1,16 @@
+/* TES STYLES DE BASE */
 body {
     background-color: black;
     color: white;
     text-align: center;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
 }
 
-.cover {
-    width: 600px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 25px red;
+h1 {
+    margin-bottom: 50px;
+    font-size: 2.2em;
 }
 
 .btn {
@@ -17,4 +19,131 @@ body {
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: darkred;
+    transform: scale(1.05);
+}
+
+/* LA GRILLE */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LA CARTE CHANSON STANDARD */
+.song-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.song-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+audio {
+    width: 280px;
+    margin-bottom: 15px;
+}
+
+/* LIENS ET ICONES */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a {
+    color: #3366ff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.links a i {
+    margin-right: 5px;
+}
+
+.links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- ENCADREMENT SPÉCIAL BONUS --- */
+.bonus-card {
+    border: 2px solid red;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+    background: rgba(255, 0, 0, 0.05); /* Léger fond rouge transparent */
+    position: relative;
+    padding-top: 30px;
+}
+
+.bonus-badge {
+    position: absolute;
+    top: -12px;
+    background: red;
+    padding: 2px 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Style spécifique pour la page des paroles */
+.lyrics-page {
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%); /* Fond sombre dégradé */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.lyrics-container {
+    max-width: 800px;
+    margin: 50px auto; /* Centre le bloc sur la page */
+    padding: 40px;
+    background: rgba(20, 20, 20, 0.8); /* Fond légèrement plus clair pour l'effet papier */
+    border-left: 1px solid #333; /* Petite ligne sur le côté comme un cahier */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+    text-align: left; /* Aligné à gauche */
+}
+
+.lyrics-page h1 {
+    font-family: 'Special Elite', cursive; /* Style machine à écrire */
+    color: red;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.lyrics-text {
+    font-family: 'Caveat', cursive; /* Style manuscrit élégant */
+    font-size: 1.4em;
+    padding-left: 10%; /* Retrait à gauche comme demandé */
+    letter-spacing: 1px;
+}
+
+.lyrics-text strong {
+    color: #fff;
+    font-size: 1.1em;
+}
+
+/* Responsive : moins de retrait sur mobile */
+@media (max-width: 600px) {
+    .lyrics-container { margin: 10px; padding: 20px; }
+    .lyrics-text { padding-left: 5%; font-size: 1.2em; }
 }
